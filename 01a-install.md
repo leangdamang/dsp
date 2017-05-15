@@ -54,7 +54,7 @@ I installed Python 3 because that's the version I'm learning and am most comfort
 
 How can you check the version of Python installed if you happen to be on an unfamiliar computer?
 
-'python --version'
+>> 'python --version'
  
 
 
