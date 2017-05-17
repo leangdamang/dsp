@@ -81,7 +81,7 @@ Upload these 3 files to the [`editors`](editors/) folder.
 
 What terminal editor will be your preferred choice of use? How did you make your decision?
 
->> I prefer nanos because  of its simplicity.  I'm pretty reliant on a mouse unfortunately and  would like to build towards vim
+>> I'm  using emacs right now since it has a pretty clean interface. I might change around though since I want to test them all out.
 
 --
 
@@ -89,6 +89,6 @@ What terminal editor will be your preferred choice of use? How did you make your
 
 What graphical editor will you use? How did you make your decision? What are some interesting features of your editor? What are some useful keyboard shortcuts for your editor? How do you customize your editor?
 
->> REPLACE THIS TEXT WITH YOUR RESPONSE
+>> I used Atom previously since it's open source and has a nice UI. You can easily pull up and search all of the short cuts with cmd+shift+p and there's a spell check too. It also looks like you can use short cuts for git commands as well, but I need to test that out. 
 
  
