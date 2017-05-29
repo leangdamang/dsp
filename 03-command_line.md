@@ -26,13 +26,21 @@ Make a cheat sheet for yourself: a list of at least **ten** commands and what th
 > > cd - change directory .
 
 > > rm -r directory -  deleting a directory . 
-> > touch filename.txt -  creating a file using `touch` command . 
-> > rm filename.txt - deleting a file . 
-> > mv filename.txt newfilename.txt - renaming a file . 
-> > ls -a - listing hidden files . 
-> > cp directory/filename.txt newdirectory/ - copying a file from one directory to another . 
+
+> > touch filename.txt -  creating a file using `touch` command .
+
+> > rm filename.txt - deleting a file .
+
+> > mv filename.txt newfilename.txt - renaming a file .
+
+> > ls -a - listing hidden files .
+
+> > cp directory/filename.txt newdirectory/ - copying a file from one directory to another .
+
 > > grep "Text" filename.txt - finds text within the file name; pair with -R to read into all within a directory or -i for case insensitivity . 
+
 > > cat filename.txt - displays lines in a file . 
+
 > > sed - searches for a text pattern and modifies it . 
 
 ---
@@ -49,12 +57,18 @@ What do the following commands do:
 `ls -Glp`  
 
 > > `ls`  - lists contents . 
+
 > > `ls -a`  - lists all contents . 
+
 > > `ls -l`  - lists contents in long form . 
+
 > > `ls -lh`  - lists contents in long human readable format . 
-> > `ls -lah` - lists all contents in long human readable format .    
-> > `ls -t`  - lists contents by time last modified . 
-> > `ls -Glp` - lists contents in long (no group) list with slashes for all files that are directories . 
+
+> > `ls -lah` - lists all contents in long human readable format .
+
+> > `ls -t`  - lists contents by time last modified .
+
+> > `ls -Glp` - lists contents in long (no group) list with slashes for all files that are directories .
 
 ---
 
@@ -62,10 +76,14 @@ What do the following commands do:
 
 Explore these other [ls options](http://www.techonthenet.com/unix/basic/ls.php) and pick 5 of your favorites:
 
-> > ls -F . 
-> > ls -d . 
-> > ls -R . 
-> > ls -Fa . 
+> > ls -F .
+
+> > ls -d .
+
+> > ls -R .
+
+> > ls -Fa .
+
 > > ls -m . 
 ---
 
