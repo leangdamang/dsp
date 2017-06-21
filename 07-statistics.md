@@ -69,26 +69,26 @@ Cohen's D is an example of effect size.  Other examples of effect size are:  cor
 
 You will see effect size again and again in results of algorithms that are run in data science.  For instance, in the bootcamp, when you run a regression analysis, you will recognize the t-statistic as an example of effect size.
 
-~def CohenEffectSize(group1, group2):
-    """Computes Cohen's effect size for two groups.
-    
-    group1: Series or DataFrame
-    group2: Series or DataFrame
-    
-    returns: float if the arguments are Series;
-             Series if the arguments are DataFrames
-    """
-    diff = group1.mean() - group2.mean()
+    def CohenEffectSize(group1, group2):
+        """Computes Cohen's effect size for two groups.
 
-    var1 = group1.var()
-    var2 = group2.var()
-    n1, n2 = len(group1), len(group2)
+        group1: Series or DataFrame
+        group2: Series or DataFrame
 
-    pooled_var = (n1 * var1 + n2 * var2) / (n1 + n2)
-    d = diff / np.sqrt(pooled_var)
-    return d
-print(CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb)) #-0.0886729270726
-# The effect size is higher for weight than pregnancy length. First born babies are likelier to be lighter than other babies
+        returns: float if the arguments are Series;
+                 Series if the arguments are DataFrames
+        """
+        diff = group1.mean() - group2.mean()
+
+        var1 = group1.var()
+        var2 = group2.var()
+        n1, n2 = len(group1), len(group2)
+
+        pooled_var = (n1 * var1 + n2 * var2) / (n1 + n2)
+        d = diff / np.sqrt(pooled_var)
+        return d
+    print(CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb)) #-0.0886729270726
+The effect size is higher for weight than pregnancy length. First born babies are likelier to be lighter than other babies
 
 
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
