@@ -94,13 +94,33 @@ The effect size is higher for weight than pregnancy length. First born babies ar
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
 This problem presents a robust example of actual vs biased data.  As a data scientist, it will be important to examine not only the data that is available, but also the data that may be missing but highly relevant.  You will see how the absence of this relevant data will bias a dataset, its distribution, and ultimately, its statistical interpretation.
 
+    resp = nsfg.ReadFemResp()
+    kid_pmf = thinkstats2.Pmf(resp.numkdhh, label = 'observed')
+    thinkplot.Pmf(kid_pmf)
+    thinkplot.Show(xlabel = 'Kids')
+    biased_pmf = BiasPmf(kid_pmf, label='biased')
+    thinkplot.PrePlot(2)
+    thinkplot.Pmfs([kid_pmf, biased_pmf])
+    thinkplot.Config(xlabel='Kids', ylabel='PMF')
+    kid_pmf.Mean() #1.0242051550438309
+    biased_pmf.Mean() # 2.4036791006642821
+
 ### Q3. [Think Stats Chapter 4 Exercise 2](statistics/4-2-random_dist.md) (random distribution)  
 This questions asks you to examine the function that produces random numbers.  Is it really random?  A good way to test that is to examine the pmf and cdf of the list of random numbers and visualize the distribution.  If you're not sure what pmf is, read more about it in Chapter 3.  
+    
+    import numpy
+    ran = numpy.random.random(1000)
+    pmf = thinkstats2.Pmf(ran, label = 'random numbers')
+    thinkplot.Pmf(pmf)
+    cdf = thinkstats2.Cdf(ran, label = 'random numbers')
+    thinkplot.Cdf(cdf)
+    
+> It looks random because the pmf is uniformly distributed and the cdf is fairly linear
 
 ### Q4. [Think Stats Chapter 5 Exercise 1](statistics/5-1-blue_men.md) (normal distribution of blue men)
 This is a classic example of hypothesis testing using the normal distribution.  The effect size used here is the Z-statistic. 
 
-
+    (dist.cdf(185.4)- dist.cdf(177.8))*100 #34.21%
 
 ### Q5. Bayesian (Elvis Presley twin) 
 
