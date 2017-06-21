@@ -87,8 +87,8 @@ You will see effect size again and again in results of algorithms that are run i
         pooled_var = (n1 * var1 + n2 * var2) / (n1 + n2)
         d = diff / np.sqrt(pooled_var)
         return d
-    print(CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb)) #-0.0886729270726
-The effect size is higher for weight than pregnancy length. First born babies are likelier to be lighter than other babies
+        print(CohenEffectSize(firsts.totalwgt_lb, others.totalwgt_lb)) #-0.0886729270726
+>The effect size is higher for weight than pregnancy length. First born babies are likelier to be lighter than other babies
 
 
 ### Q2. [Think Stats Chapter 3 Exercise 1](statistics/3-1-actual_biased.md) (actual vs. biased)
