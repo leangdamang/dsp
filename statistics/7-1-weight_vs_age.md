@@ -1,4 +1,5 @@
 [Think Stats Chapter 7 Exercise 1](http://greenteapress.com/thinkstats2/html/thinkstats2008.html#toc70) (weight vs. age)
+    
     thinkplot.Scatter(live.agepreg, live.totalwgt_lb)
     thinkplot.Show(xlabel = 'Years', ylabel = 'LBs', alpha = .2)
     bins = np.arange(15,40,4)
