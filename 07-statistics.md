@@ -147,6 +147,7 @@ The following exercises are optional, but we highly encourage you to complete th
 
 ### Q7. [Think Stats Chapter 7 Exercise 1](statistics/7-1-weight_vs_age.md) (correlation of weight vs. age)
 In this exercise, you will compute the effect size of correlation.  Correlation measures the relationship of two variables, and data science is about exploring relationships in data.    
+
     thinkplot.Scatter(live.agepreg, live.totalwgt_lb)
     thinkplot.Show(xlabel = 'Years', ylabel = 'LBs', alpha = .2)
     bins = np.arange(15,40,4)
