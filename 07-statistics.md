@@ -170,6 +170,32 @@ In this exercise, you will compute the effect size of correlation.  Correlation 
 ### Q8. [Think Stats Chapter 8 Exercise 2](statistics/8-2-sampling_dist.md) (sampling distribution)
 In the theoretical world, all data related to an experiment or a scientific problem would be available.  In the real world, some subset of that data is available.  This exercise asks you to take samples from an exponential distribution and examine how the standard error and confidence intervals vary with the sample size.
 
+    def expestimator(n, lamb, iterations):
+        mean = []
+        for x in range(iterations):
+            xs = np.random.exponential(1.0/lamb, n)
+            mean.append(1/np.mean(xs))
+        return mean
+    def test1():
+        mean = expestimator(10, 2, 1000)  
+        cdf = thinkstats2.Cdf(mean)
+        rmse = RMSE(mean, 2)
+        thinkplot.Cdf(cdf)
+        print('Standard Error:', rmse)
+        print('90% Confidence Interval:', cdf.Percentile(5), cdf.Percentile(95))
+
+    test1()
+    
+    def test2(lamb):
+        n = [20, 30, 40, 50, 60, 70, 80, 90, 500, 1000]
+        rmse = []
+        for x in n:
+            rmse.append(RMSE(expestimator(x, lamb, 1000), lamb))
+        thinkplot.Plot(n, rmse)
+        thinkplot.Config(xlabel = 'samples', ylabel = 'Standard Error')
+    test2(2)
+>> You can see that as N increases, the RMSE decreases closer to 0. 
+    
 ### Q9. [Think Stats Chapter 6 Exercise 1](statistics/6-1-household_income.md) (skewness of household income)
     mean = Mean(sample) 
     median = Median(sample)
@@ -181,6 +207,26 @@ In the theoretical world, all data related to an experiment or a scientific prob
 >>The upper bounds highly skew the results as seen from the skewness rating (1.05). It seems like there are a lot of right outliers in the dataset dragging up the mean. The skew would increase if we increased the upper bound as it would add additional outliers. However, the Pearson Median Skewness may decrease since it would also increase the standard dev of the data set 
 
 ### Q10. [Think Stats Chapter 8 Exercise 3](statistics/8-3-scoring.md) (scoring)
+
+    def game(lam):
+        goals = 0
+        t = 0
+        while True:
+            t2 = random.expovariate(lam)
+            t+=t2
+            if t>1:
+                break
+            goals+=1
+        return goals
+    def game_simulator(num, lam):
+        goals = []
+        for x in range(num):
+            goals.append(game(lam))
+        print('Mean Error:', MeanError(goals, lam))
+        print('RMSE:', RMSE(goals, lam))
+    game_simulator(10000, 2)
+>> The estimate is not biased since Mean Error decreases as the number of simulations increase. 
+
 ### Q11. [Think Stats Chapter 9 Exercise 2](statistics/9-2-resampling.md) (resampling)
 
 ---
